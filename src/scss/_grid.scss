@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.templateRow{
+    content:" ";
+    display: table; /*dice manu que es como block pero mejor, no se explico que es exactamente*/
+}
+.row{
+    width: 100%;
+    
+    &:before{
+        @extend.templateRow;
+    }
+    &:after{
+        @extend.templateRow;
+        clear: both;
+    }
+}
+ /*Declaracion  de la clase col */
+[class*="col-"]{
+    min-height: 7px;
+    padding: 12px;
+    float: left;
+}
+
+ /*Declaracion  de la clase offset */
+
+[class*="offset-"]{
+    min-height: 7px;
+    float: left;
+}
+
+/*Funciones en Sass,columnas en CSS*/
+@function anchoDeColumnas($i){
+    @return percentage(($i/12));
+}
+@for $i from 1 through 12{
+    .col-#{$i}{
+        width: anchoDeColumnas($i);
+    }
+}    
+/*------Funciones en Saas de Offset, columnas offset en CSS ------*/
+
+@function inicioColumna($offeset){
+    @return percentage(($offeset/12));
+}
+@for $offeset from 1 through 12{
+    .offset-#{$offeset}{
+        margin-left: inicioColumna($offeset);
+    }
+}

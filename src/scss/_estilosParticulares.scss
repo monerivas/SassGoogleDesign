@@ -1,0 +1,28 @@
+/*body{
+    @include estiloFuentes;
+}*/
+
+
+nav{
+    ul{
+        li{           
+            display: inline-block;
+            list-style: none;  
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#seccionMethod{
+    img{
+        height: 10%;
+        width: 100%;
+    }
+}
+
+#imgAsanaMini{
+     height: 1%;
+        width: 100%;
+}
