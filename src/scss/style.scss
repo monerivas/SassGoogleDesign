@@ -2,3 +2,9 @@
 @import "clasesGlobales";
 @import "estilosParticulares";
 @import "mixin";
+@import "variables";
+
+
+body{
+    @include estiloFuentes;
+}
